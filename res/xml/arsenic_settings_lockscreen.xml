@@ -42,6 +42,12 @@
         android:summary="@string/block_on_secure_keyguard_summary"
         android:defaultValue="false"/>
 
+    <com.arsenic.settings.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_power_menu_disabled"
+        android:title="@string/lockscreen_power_menu_disabled_title"
+        android:summary="@string/lockscreen_power_menu_disabled_summary"
+        android:defaultValue="true" />
+
     <Preference
             android:title="@string/lockscreen_tuner_title" >
             <intent android:action="android.intent.action.MAIN"
