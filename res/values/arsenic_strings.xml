@@ -200,4 +200,10 @@
     <string name="battery_fully_charged_notif_title">Battery fully charged</string>
     <string name="battery_fully_charged_notif_summary">Show a notification when the battery is fully charged</string>
 
+    <!-- Incall vibrate options -->
+    <string name="incall_vibration_category">In-call Vibration</string>
+    <string name="incall_vibrate_connect_title">Vibrate on Connect</string>
+    <string name="incall_vibrate_call_wait_title">Vibrate on Call Waiting</string>
+    <string name="incall_vibrate_disconnect_title">Vibrate on Disconnect</string>
+
 </resources>
