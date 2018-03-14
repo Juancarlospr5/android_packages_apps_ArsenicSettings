@@ -206,4 +206,9 @@
     <string name="incall_vibrate_call_wait_title">Vibrate on Call Waiting</string>
     <string name="incall_vibrate_disconnect_title">Vibrate on Disconnect</string>
 
+    <!-- Ambient display battery percentage --> 
+    <string name="ambient_battery_percent_title">Battery level on bottom</string> 
+    <string name="ambient_battery_percent_summary">Enable to show battery percent while dozing</string> 	
+
+    <string name="doze_display_title">Ambient Display</string>
 </resources>
