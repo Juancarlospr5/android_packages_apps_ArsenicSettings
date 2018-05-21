@@ -113,7 +113,7 @@
         <item>7</item>
     </string-array>
 
-        <!-- Tiles animation style -->
+    <!-- Tiles animation style -->
     <string-array name="qs_tile_animation_style_entries" translatable="false">
         <item>@string/qs_tile_animation_style_off</item>
         <item>@string/qs_tile_animation_style_flip</item>
@@ -139,7 +139,7 @@
         <item>1500</item>
     </string-array>
 
-        <!-- Tiles animation interpolator -->
+    <!-- Tiles animation interpolator -->
     <string-array name="qs_tile_animation_interpolator_entries" translatable="false">
         <item>@string/qs_tile_animation_interpolator_linearInterpolator</item>
         <item>@string/qs_tile_animation_interpolator_accelerateInterpolator</item>
@@ -162,7 +162,7 @@
         <item>7</item>
     </string-array>
 
-        <!-- Option to enable/disable scrolling cache -->
+    <!-- Option to enable/disable scrolling cache -->
     <string-array name="entries_scrollingcache" translatable="false">
         <item>@string/pref_scrollingcache_force_enable</item>
         <item>@string/pref_scrollingcache_default_enable</item>
@@ -420,5 +420,18 @@
         <item>120</item>
         <item>300</item>
         <item>600</item>
+    </string-array>
+
+    <!-- MediaScanner behavior on boot -->
+    <string-array name="media_scanner_on_boot_entries">
+        <item>@string/media_scanner_on_boot_enabled</item>
+        <item>@string/media_scanner_on_boot_ask</item>
+        <item>@string/media_scanner_on_boot_disabled</item>
+    </string-array>
+
+    <string-array name="media_scanner_on_boot_values" translatable="false">
+        <item>0</item> 
+        <item>1</item> 
+        <item>2</item>
     </string-array>
 </resources>
