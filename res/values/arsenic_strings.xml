@@ -211,4 +211,8 @@
     <string name="ambient_battery_percent_summary">Enable to show battery percent while dozing</string> 	
 
     <string name="doze_display_title">Ambient Display</string>
+
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture">Swipe to screenshot</string>
+    <string name="three_finger_gesture_summary">Swipe three fingers to take screenshot</string>
 </resources>
