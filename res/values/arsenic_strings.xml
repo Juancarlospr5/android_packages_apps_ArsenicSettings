@@ -178,4 +178,7 @@
     <string name="ime_switcher_notify">Selector notification</string> 
     <string name="ime_switcher_notify_summary">Display input method selector notification</string> 
 
+    <!-- Toast icon -->
+    <string name="toast_icon_title">Toast icon</string>
+    <string name="toast_icon_summary">Display icon of activity that generates toast message</string>
 </resources>
