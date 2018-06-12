@@ -97,6 +97,11 @@
             android:key="vibrate_on_disconnect"
             android:title="@string/incall_vibrate_disconnect_title"
             android:defaultValue="false" />
+
+        <com.arsenic.settings.preferences.SystemSettingSwitchPreference 
+            android:key="incall_notifications_vibrate" 
+            android:title="@string/incall_notifications_vibrate" 
+            android:defaultValue="false" /> 
     </PreferenceCategory>
 			
 </PreferenceScreen>
