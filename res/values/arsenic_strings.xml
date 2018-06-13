@@ -147,6 +147,10 @@
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Lockscreen Shortcuts</string>
 
+    <!-- Disabling FC notifications --> 
+    <string name="disable_fc_notifications_title">Diable FC Notifications</string> 
+    <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string> 
+
     <!-- Navbar tuner -->
     <string name="navbar_tuner_title">Navbar Buttons</string>
 
