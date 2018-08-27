@@ -55,6 +55,7 @@
     <string name="tile_animation_title" >Tile Animation</string>
     <string name="list_animation_title" >ListView Animation</string>
     <string name="system_keyguard_animation_title" >System and Keyguard Animation</string>
+    <string name="animation_duration_custom">Custom</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
@@ -118,7 +119,7 @@
     <string name="toast_animation_test">This is test for selected toast animation</string>
     <string name="toast">Toast</string>
 
-        <!-- Option to enable/disable scrolling cache -->
+    <!-- Option to enable/disable scrolling cache -->
     <string name="pref_scrollingcache_title">Scrolling cache</string>
     <string name="pref_scrollingcache_summary">Scrolling cache may improve scrolling performance at the cost of memory</string>
     <string name="pref_scrollingcache_force_enable">Force enable</string>
@@ -126,7 +127,7 @@
     <string name="pref_scrollingcache_default_disable">Default disable</string>
     <string name="pref_scrollingcache_force_disable">Force disable</string>
 
-        <!-- ListView animation -->
+    <!-- ListView animation -->
     <string name="listview_animation_title">ListView animation</string>
     <string name="listview_off">Default</string>
     <string name="listview_wave_left">Wave (left)</string>
@@ -167,6 +168,19 @@
     <string name="title_animation_no_override">Prevent app overrides</string>
     <string name="summary_animation_no_override">Prevent apps from overriding transitions</string>
     <string name="animation_duration_default">Default</string>
+
+    <!-- Tiles animation style  -->
+    <string name="qs_tile_animation_category">QS tiles animations</string>
+    <string name="qs_tile_animation_style_title">QS tiles animation style</string>
+    <string name="qs_tile_animation_duration_title">QS tiles animation duration</string>
+    <string name="qs_tile_animation_style_off">no animation</string>
+    <string name="qs_tile_animation_style_flip">flip</string>
+    <string name="qs_tile_animation_style_rotate">rotate</string>
+    <string name="qs_tile_animation_duration_low">low</string>
+    <string name="qs_tile_animation_duration_default">default</string>
+    <string name="qs_tile_animation_duration_fast">fast</string>
+    <string name="qs_set_animation_style">Animation is set to %1$s</string>
+    <string name="qs_set_animation_duration">Animation duration is set to %1$s</string>
 
     <!-- Buttons backlight timeout -->
     <string name="backlight_timeout_title">Buttons backlight timeout</string>
