@@ -18,4 +18,9 @@
 	android:title="@string/misc_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <!--<PreferenceCategory
+        android:key="misc_screenshot"
+        android:title="@string/misc_screenshot">
+    </PreferenceCategory>-->
+
 </PreferenceScreen>
