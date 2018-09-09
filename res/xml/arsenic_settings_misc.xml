@@ -24,6 +24,12 @@
         android:entries="@array/media_scanner_on_boot_entries" 
         android:entryValues="@array/media_scanner_on_boot_values" /> 
 
+    <com.arsenic.settings.preferences.SystemSettingSwitchPreference
+        android:key="headset_connect_player"
+        android:title="@string/headset_connect_player_title"
+        android:summary="@string/headset_connect_player_summary"
+        android:defaultValue="false" />
+
     <!--<PreferenceCategory
         android:key="misc_screenshot"
         android:title="@string/misc_screenshot">
