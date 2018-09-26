@@ -70,9 +70,9 @@
     <string name="gesture_ls" >Screen</string>
     <string name="ime_rotate" >Advanced</string>
     <string name="ime_selector" >Selector Toggle</string>
-    <string name="themes_title">Themes</string> 
-    <string name="arsenic_density">Display</string> 
-    <string name="corners_category">Corners</string> 
+    <string name="themes_title">Themes</string>
+    <string name="arsenic_density">Display</string>
+    <string name="corners_category">Corners</string>
     <string name="ls_clock" >Clock Styles</string>
     <string name="ls_date" >Date Styles</string>
     <string name="ls_shortcuts" >Shortcuts</string>
@@ -95,7 +95,7 @@
     <string name="statusbar_pulldown" >Pulldown</string>
     <string name="statusbar_carrier" >Carrier</string>
     <string name="statusbar_tuner" >Statusbar Icons</string>
-    <string name="statusbar_logo_cat">Logo</string> 
+    <string name="statusbar_logo_cat">Logo</string>
     <string name="hafr_title" >Hide Apps from Recent</string>
     <string name="immersive_recent_title" >Immersive Recent</string>
     <string name="recent_button_title" >Stock Recents</string>
@@ -103,7 +103,7 @@
     <string name="notification_messages" >System Notifications</string>
     <string name="notification_heads" >Heads Up</string>
     <string name="notification_misc" >Misc</string>
-    <string name="qs_layout_category">Layout</string> 
+    <string name="qs_layout_category">Layout</string>
     <string name="qs_element_title" >Elements</string>
     <string name="footer_title" >Footer</string>
     <string name="animation_duration_custom">Custom</string>
@@ -156,15 +156,15 @@
 
     <string name="face_auto_unlock_title">Face auto unlock</string>
     <string name="face_auto_unlock_summary">Dismiss lockscreen after face unlocking</string>
-    
-    <!-- Screen Off animation --> 
-    <string name="screen_off_animation_title">Screen off animation</string> 
-    <string name="screen_off_animation_summary">%1$s</string> 
-    <string name="screen_off_animation_fade">Simple fade</string> 
+
+    <!-- Screen Off animation -->
+    <string name="screen_off_animation_title">Screen off animation</string>
+    <string name="screen_off_animation_summary">%1$s</string>
+    <string name="screen_off_animation_fade">Simple fade</string>
     <string name="screen_off_animation_color">Color fade</string> 
-    <string name="screen_off_animation_crt">CRT</string> 
-    <string name="screen_off_animation_scale">Scale</string> 
-   
+    <string name="screen_off_animation_crt">CRT</string>
+    <string name="screen_off_animation_scale">Scale</string>
+
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">Force expanded notifications</string>
     <string name="force_expanded_notifications_summary">Force apps that support expanded notifications</string>
@@ -278,14 +278,14 @@
     <string name="backlight_timeout_20s">20 sec</string>
     <string name="backlight_timeout_30s">30 sec</string>
 
-    <!-- Dashboard conditions--> 
-    <string name="dashboard_category">Dashboard options</string> 
-    <string name="dashboard_conditions_title">Dashboard conditions</string> 
-    <string name="summary_dashboard_conditions_enabled">Dashboard conditions are enabled</string> 
-    <string name="summary_dashboard_conditions_disabled">Dashboard conditions are disabled</string> 
-    <string name="dashboard_suggestions_title">Dashboard suggestions</string> 
-    <string name="summary_dashboard_suggestions_enabled">Dashboard suggestions are enabled</string> 
-    <string name="summary_dashboard_suggestions_disabled">Dashboard suggestions are disabled</string> 
+    <!-- Dashboard conditions-->
+    <string name="dashboard_category">Dashboard options</string>
+    <string name="dashboard_conditions_title">Dashboard conditions</string>
+    <string name="summary_dashboard_conditions_enabled">Dashboard conditions are enabled</string>
+    <string name="summary_dashboard_conditions_disabled">Dashboard conditions are disabled</string>
+    <string name="dashboard_suggestions_title">Dashboard suggestions</string>
+    <string name="summary_dashboard_suggestions_enabled">Dashboard suggestions are enabled</string>
+    <string name="summary_dashboard_suggestions_disabled">Dashboard suggestions are disabled</string>
 
     <!-- Enable keys backlight-->
     <string name="button_brightness_title">Backlight</string>
@@ -373,20 +373,20 @@
     <string name="hide_from_recents_add_app">Add App</string>
     <string name="hide_apps_from_recents_summary">Select certian apps to hide in recents</string>
 
-    <!-- Keyboard and IME  --> 
-    <string name="disable_fullscreen_keyboard_title">Disable fullscreen keyboard</string> 
-    <string name="disable_fullscreen_keyboard_summary">Landscape keyboard will never take up entire screen</string> 
-    <string name="keyboard_rotation_toggle_title">Auto keyboard rotation</string> 
-    <string name="keyboard_rotation_toggle_summary">Force auto-rotate when keyboard is shown</string> 
-    <string name="keyboard_rotation_timeout_title">Auto-rotate timeout</string> 
-    <string name="keyboard_rotation_timeout_summary">Disables auto-rotate sensor <xliff:g id="rotate_timeout">%1$s</xliff:g> seconds after keyboard is hidden</string> 
-    <string name="keyboard_rotation_dialog">This feature forces auto-rotate to turn on temporarily while the keyboard is shown.  It has no effect when auto-rotate is already enabled.</string> 
-    <string name="show_enter_key_title">Show enter key</string> 
-    <string name="show_enter_key_summary">Force keyboard to show enter instead of emoticon key</string> 
-    <string name="keyboard_ime_title">IME Settings</string> 
-    <string name="keyboard_ime_summury">Advanced IME Settings</string> 
-    <string name="ime_switcher_notify">Selector notification</string> 
-    <string name="ime_switcher_notify_summary">Display input method selector notification</string> 
+    <!-- Keyboard and IME  -->
+    <string name="disable_fullscreen_keyboard_title">Disable fullscreen keyboard</string>
+    <string name="disable_fullscreen_keyboard_summary">Landscape keyboard will never take up entire screen</string>
+    <string name="keyboard_rotation_toggle_title">Auto keyboard rotation</string>
+    <string name="keyboard_rotation_toggle_summary">Force auto-rotate when keyboard is shown</string>
+    <string name="keyboard_rotation_timeout_title">Auto-rotate timeout</string>
+    <string name="keyboard_rotation_timeout_summary">Disables auto-rotate sensor <xliff:g id="rotate_timeout">%1$s</xliff:g> seconds after keyboard is hidden</string>
+    <string name="keyboard_rotation_dialog">This feature forces auto-rotate to turn on temporarily while the keyboard is shown.  It has no effect when auto-rotate is already enabled.</string>
+    <string name="show_enter_key_title">Show enter key</string>
+    <string name="show_enter_key_summary">Force keyboard to show enter instead of emoticon key</string>
+    <string name="keyboard_ime_title">IME Settings</string>
+    <string name="keyboard_ime_summury">Advanced IME Settings</string>
+    <string name="ime_switcher_notify">Selector notification</string>
+    <string name="ime_switcher_notify_summary">Display input method selector notification</string>
 
     <!-- Toast icon -->
     <string name="toast_icon_title">Toast icon</string>
@@ -539,7 +539,7 @@
     <string name="qs_footer_warnings_title">QS footer warnings</string>
     <string name="qs_footer_warnings_summary">Display a warning at bottom of QS panel when network is monitored by external apps or vpn</string>
 
-    <!-- MediaScanner behavior on boot --> 
+    <!-- MediaScanner behavior on boot -->
     <string name="media_scanner_on_boot_title">MediaScanner behavior on boot</string>
     <string name="media_scanner_on_boot_enabled">Scan media</string>
     <string name="media_scanner_on_boot_ask">Ask to scan (notification)</string>
@@ -674,7 +674,7 @@
     <string name="delete_profile">Delete profile</string>
     <string name="profile_name">Name</string>
     <string name="string_seconds">seconds</string>
-    <string name="string_default">Default</string> 
+    <string name="string_default">Default</string>
     <string name="action_filter">Filter</string>
     <string name="doze_settings_applied">Settings applied</string>
 
