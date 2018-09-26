@@ -21,7 +21,8 @@
     <Preference
         android:key="volume_key"
         android:fragment="com.arsenic.settings.fragments.Volume"
-        android:title="@string/volume_title" />
+        android:title="@string/volume_title"
+        android:summary="@string/volume_summary" />
 
     <PreferenceCategory
         android:key="hardware_keys_power"
