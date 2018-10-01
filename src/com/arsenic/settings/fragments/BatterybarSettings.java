@@ -146,7 +146,6 @@ public class BatterybarSettings extends SettingsPreferenceFragment implements
         mBatteryBarThickness.setOnPreferenceChangeListener(this);
         mBatteryBarThickness.setValue((Settings.System.getInt(resolver,
                 Settings.System.BATTERY_BAR_THICKNESS, 1)) + "");
-        mBatteryBarThickness.setSummary(mBatteryBarThickness.getEntry());
 
         updateBatteryBarOptions();
     }
