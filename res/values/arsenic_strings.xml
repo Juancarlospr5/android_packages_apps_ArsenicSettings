@@ -881,4 +881,9 @@
     <string name="carbon_gesture_media_previous">Previous media</string> 
     <string name="carbon_gesture_customapp">Launch application</string> 
     <string name="carbon_gesture_launch">Launch</string> 
+
+    <!-- AOSP Recents component Style -->
+    <string name="recents_component_type_title">Stock Recents Style</string>
+    <string name="recents_pie">Pie</string>
+    <string name="recents_oreo">Oreo</string>
 </resources>
