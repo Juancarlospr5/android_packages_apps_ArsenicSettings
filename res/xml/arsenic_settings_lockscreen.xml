@@ -162,6 +162,12 @@
             android:summary="@string/hide_lockscreen_indicator_display_summary" 
             android:defaultValue="false" /> 
 
+        <com.arsenic.settings.preferences.SystemSettingSwitchPreference 
+            android:key="hide_lockscreen_icon" 
+            android:title="@string/hide_lockscreen_icon_title" 
+            android:summary="@string/hide_lockscreen_icon_summary" 
+            android:defaultValue="false" /> 
+
     </PreferenceCategory>
 
     <PreferenceCategory
