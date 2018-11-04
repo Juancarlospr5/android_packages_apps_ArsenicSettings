@@ -78,16 +78,22 @@
         android:key="statusbar_networkicon"
         android:title="@string/statusbar_networkicon">
 
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
     <PreferenceCategory
         android:key="statusbar_ntraffic"
         android:title="@string/statusbar_ntraffic">
 
+	<com.arsenic.settings.preferences.SystemSettingSwitchPreference
+            android:key="statusbar_show_wifi_activity"
+            android:title="@string/statusbar_show_wifi_activity_title"
+            android:summary="@string/statusbar_show_wifi_activity_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
  	
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:key="statusbar_ticker"
         android:title="@string/statusbar_ticker">
 
