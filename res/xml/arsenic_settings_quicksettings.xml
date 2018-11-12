@@ -85,6 +85,12 @@
             android:defaultValue="false"/>
 
         <com.arsenic.settings.preferences.SystemSettingSwitchPreference
+	        android:key="qs_show_info_header"
+	        android:title="@string/tuner_show_info_header_title"
+	        android:summary="@string/tuner_show_info_header_category"
+	        android:defaultValue="true" />
+
+        <com.arsenic.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_footer_warnings"
             android:title="@string/qs_footer_warnings_title"
             android:summary="@string/qs_footer_warnings_summary"

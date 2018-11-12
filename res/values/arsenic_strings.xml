@@ -1177,4 +1177,8 @@
     <string name="qs_header_lightgrey">Light Grey</string>
     <string name="qs_header_accent">Accent Based</string>
     <string name="qs_header_transparent">Transparent</string>
+
+    <!-- Hide header -->
+    <string name="tuner_show_info_header_title">Information header</string>
+    <string name="tuner_show_info_header_category">Shows information on top of the QS panel</string>
 </resources>
