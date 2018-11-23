@@ -40,6 +40,11 @@
         android:title="@string/powermenu_screenshot_title"
         android:defaultValue="false" />
 
+    <com.arsenic.settings.preferences.SystemSettingSwitchPreference
+        android:key="global_actions_screenrecord"
+        android:title="@string/powermenu_screenrecord_title"
+        android:defaultValue="false" />
+
     <SwitchPreference
         android:key="powermenu_torch"
         android:title="@string/powermenu_torch"
