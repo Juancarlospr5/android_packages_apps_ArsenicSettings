@@ -35,6 +35,7 @@ import com.arsenic.settings.display.NotificationStylePreferenceController;
 import com.arsenic.settings.display.QsHeaderStylePreferenceController;
 import com.arsenic.settings.display.QsTileStylePreferenceController;
 import com.arsenic.settings.display.RoundedCornersPreferenceController;
+import com.arsenic.settings.display.UiStylePreferenceController;
 
 import com.arsenic.settings.R;
 
@@ -107,6 +108,7 @@ public class Interface extends DashboardFragment {
         controllers.add(new QsHeaderStylePreferenceController(context));
         controllers.add(new QsTileStylePreferenceController(context));
         controllers.add(new RoundedCornersPreferenceController(context));
+        controllers.add(new UiStylePreferenceController(context));
         return controllers;
     }
 }
