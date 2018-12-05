@@ -110,6 +110,7 @@
     <string name="animation_duration_custom">Custom</string>
     <string name="ambient_element">Bottom elements</string>
     <string name="brightness_category_title">Brightness Slider</string>
+    <string name="volume_key_title">Volume keys</string>
 
     <!-- Blink flashlight for incoming calls -->
     <string name="flashlight_on_call_title">Blink Flashlight on call</string>
