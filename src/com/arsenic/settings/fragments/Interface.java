@@ -32,6 +32,8 @@ import com.arsenic.settings.display.AutoDarkUIPreferenceController;
 import com.arsenic.settings.display.ContentPaddingPreferenceController;
 import com.arsenic.settings.display.DarkUIPreferenceController;
 import com.arsenic.settings.display.NotificationStylePreferenceController;
+import com.arsenic.settings.display.QsAlphaPreferenceController;
+import com.arsenic.settings.display.QsColorPreferenceController;
 import com.arsenic.settings.display.QsHeaderStylePreferenceController;
 import com.arsenic.settings.display.QsTileStylePreferenceController;
 import com.arsenic.settings.display.RoundedCornersPreferenceController;
@@ -105,6 +107,8 @@ public class Interface extends DashboardFragment {
         controllers.add(new DarkUIPreferenceController(context));
 		controllers.add(mFontPickerPreference = new FontPickerPreferenceController(context, lifecycle, fragment));
         controllers.add(new NotificationStylePreferenceController(context));
+        controllers.add(new QsAlphaPreferenceController(context));
+        controllers.add(new QsColorPreferenceController(context));
         controllers.add(new QsHeaderStylePreferenceController(context));
         controllers.add(new QsTileStylePreferenceController(context));
         controllers.add(new RoundedCornersPreferenceController(context));
