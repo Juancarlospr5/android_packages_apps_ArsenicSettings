@@ -165,7 +165,14 @@
         android:key="dashboard_category" 
         android:title="@string/dashboard_category">
 
-        <com.arsenic.settings.preferences.SystemSettingSwitchPreference 
+	    <ListPreference
+            android:key="switch_style"
+            android:title="@string/switch_style_title"
+            android:persistent="false"
+            android:entries="@array/switch_style_entries"
+            android:entryValues="@array/switch_style_values" />
+
+        <com.arsenic.settings.preferences.SystemSettingIntListPreference
             android:key="theming_settings_dashboard_icons"
             android:title="@string/theming_settings_dashboard_icons_title"
             android:entries="@array/theming_settings_dashboard_icons_entries"
