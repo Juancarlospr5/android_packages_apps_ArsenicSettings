@@ -29,14 +29,12 @@ import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settings.display.FontPickerPreferenceController;
 import com.arsenic.settings.display.AccentPickerPreferenceController;
 import com.arsenic.settings.display.AutoDarkUIPreferenceController;
-import com.arsenic.settings.display.ContentPaddingPreferenceController;
 import com.arsenic.settings.display.DarkUIPreferenceController;
 import com.arsenic.settings.display.NotificationStylePreferenceController;
 import com.arsenic.settings.display.QsAlphaPreferenceController;
 import com.arsenic.settings.display.QsColorPreferenceController;
 import com.arsenic.settings.display.QsHeaderStylePreferenceController;
 import com.arsenic.settings.display.QsTileStylePreferenceController;
-import com.arsenic.settings.display.RoundedCornersPreferenceController;
 import com.arsenic.settings.display.SwitchStylePreferenceController;
 import com.arsenic.settings.display.UiStylePreferenceController;
 
@@ -104,7 +102,6 @@ public class Interface extends DashboardFragment {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
         controllers.add(new AccentPickerPreferenceController(context, lifecycle, fragment));
 	    controllers.add(new AutoDarkUIPreferenceController(context));
-        controllers.add(new ContentPaddingPreferenceController(context));
         controllers.add(new DarkUIPreferenceController(context));
 		controllers.add(mFontPickerPreference = new FontPickerPreferenceController(context, lifecycle, fragment));
         controllers.add(new NotificationStylePreferenceController(context));
@@ -112,7 +109,6 @@ public class Interface extends DashboardFragment {
         controllers.add(new QsColorPreferenceController(context));
         controllers.add(new QsHeaderStylePreferenceController(context));
         controllers.add(new QsTileStylePreferenceController(context));
-        controllers.add(new RoundedCornersPreferenceController(context));
         controllers.add(new SwitchStylePreferenceController(context));
         controllers.add(new UiStylePreferenceController(context));
         return controllers;

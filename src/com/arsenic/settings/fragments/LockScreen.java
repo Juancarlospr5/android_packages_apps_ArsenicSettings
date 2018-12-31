@@ -36,7 +36,6 @@ import com.arsenic.settings.preferences.SystemSettingSeekBarPreference;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import android.provider.Settings;
-import com.android.internal.util.weather.WeatherClient;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
@@ -110,7 +109,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
         final PreferenceCategory weatherCategory = (PreferenceCategory) prefScreen
                 .findPreference(WEATHER_LS_CAT);
 
-        if (!WeatherClient.isAvailable(getContext())) {
+        if (!Utils.isPackageInstalled(getContext(), "com.android.providers.weather")) {
             prefScreen.removePreference(weatherCategory);
         }
 
