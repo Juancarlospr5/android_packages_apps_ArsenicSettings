@@ -41,8 +41,8 @@ import android.widget.ListView;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 import com.arsenic.settings.R;
-import com.arsenic.settings.preferences.PackageListAdapter;
-import com.arsenic.settings.preferences.PackageListAdapter.PackageItem;
+import com.arsenic.support.preferences.PackageListAdapter;
+import com.arsenic.support.preferences.PackageListAdapter.PackageItem;
 
 import java.util.ArrayList;
 import java.util.Comparator;

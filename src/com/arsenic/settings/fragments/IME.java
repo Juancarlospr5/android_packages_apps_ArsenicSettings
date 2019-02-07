@@ -37,7 +37,7 @@ import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen; 
  
 import com.android.settings.SettingsPreferenceFragment;
-import com.arsenic.settings.preferences.SystemSettingSeekBarPreference; 
+import com.arsenic.support.preferences.CustomSeekBarPreference;
 import com.android.settings.R; 
 import android.provider.Settings; 
 import android.view.Gravity; 

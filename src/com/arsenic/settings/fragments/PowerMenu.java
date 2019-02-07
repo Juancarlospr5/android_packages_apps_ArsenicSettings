@@ -35,7 +35,7 @@ import android.support.annotation.NonNull;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.arsenic.settings.preferences.Utils;
+import com.arsenic.settings.Utils;
 
 import java.util.Arrays;
 import java.util.ArrayList;

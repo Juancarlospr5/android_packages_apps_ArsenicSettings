@@ -42,8 +42,8 @@ import android.text.TextUtils;
 import android.view.View;
 
 import com.android.settings.SettingsPreferenceFragment;
-import com.arsenic.settings.preferences.SystemSettingSeekBarPreference;
-import com.arsenic.settings.preferences.SystemSettingSwitchPreference;
+import com.arsenic.support.preferences.CustomSeekBarPreference;
+import com.arsenic.support.preferences.SystemSettingSwitchPreference;
 import com.android.settings.Utils;
 import android.util.Log;
 

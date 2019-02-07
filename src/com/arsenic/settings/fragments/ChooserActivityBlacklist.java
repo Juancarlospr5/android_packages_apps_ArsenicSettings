@@ -44,8 +44,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 
-import com.arsenic.settings.preferences.PackageListAdapter;
-import com.arsenic.settings.preferences.PackageListAdapter.PackageItem;
+import com.arsenic.support.preferences.PackageListAdapter;
+import com.arsenic.support.preferences.PackageListAdapter.PackageItem;
 import com.android.internal.logging.nano.MetricsProto;
 import com.arsenic.settings.R;
 import com.android.settings.SettingsPreferenceFragment;

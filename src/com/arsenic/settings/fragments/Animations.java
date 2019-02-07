@@ -41,7 +41,7 @@ import com.android.internal.logging.nano.MetricsProto;
 
 import com.android.internal.util.arsenic.AwesomeAnimationHelper;
 
-import com.arsenic.settings.preferences.SystemSettingSeekBarPreference;
+import com.arsenic.support.preferences.CustomSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -82,7 +82,7 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
     private ListPreference mTileAnimationStyle;
     private ListPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
-    private SystemSettingSeekBarPreference mAnimDuration;
+    private CustomSeekBarPreference mAnimDuration;
     ListPreference mActivityOpenPref;
     ListPreference mActivityClosePref;
     ListPreference mTaskOpenPref;
@@ -174,7 +174,7 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
         updateTileAnimationInterpolatorSummary(tileAnimationInterpolator);
         mTileAnimationInterpolator.setOnPreferenceChangeListener(this);
 
-        mAnimDuration = (SystemSettingSeekBarPreference) findPreference(ANIMATION_DURATION);
+        mAnimDuration = (CustomSeekBarPreference) findPreference(ANIMATION_DURATION);
         int animdef = Settings.System.getInt(resolver,
                 Settings.System.ANIMATION_CONTROLS_DURATION, 0);
         mAnimDuration.setValue(animdef);
