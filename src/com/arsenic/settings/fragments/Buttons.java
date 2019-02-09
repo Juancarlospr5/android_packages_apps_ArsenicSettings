@@ -35,6 +35,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.hwkeys.ActionConstants;
 import com.android.internal.util.hwkeys.ActionUtils;
 
+import com.arsenic.settings.Utils;
 import com.arsenic.settings.preferences.ActionFragment;
 import com.arsenic.support.preferences.CustomSeekBarPreference;
 import com.arsenic.support.preferences.SystemSettingSwitchPreference;
@@ -48,6 +49,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
     private static final String HWKEY_DISABLE = "hardware_keys_disable";
     private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT =
             "torch_long_press_power_timeout";
+    private static final String KEY_POWER_END_CALL = "power_end_call";
 
     // category keys
     private static final String CATEGORY_HWKEY = "hardware_keys";
@@ -74,6 +76,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
     private SwitchPreference mButtonBrightness_sw;
     private SwitchPreference mHwKeyDisable;
     private ListPreference mTorchLongPressPowerTimeout;
+    private SwitchPreference mPowerEndCall;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -88,6 +91,8 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
                         Settings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, 0);
         mTorchLongPressPowerTimeout.setValue(Integer.toString(TorchTimeout));
         mTorchLongPressPowerTimeout.setSummary(mTorchLongPressPowerTimeout.getEntry());
+
+        mPowerEndCall = (SwitchPreference) findPreference(KEY_POWER_END_CALL);
 
         final Resources res = getResources();
         final ContentResolver resolver = getActivity().getContentResolver();
@@ -194,11 +199,38 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
             prefScreen.removePreference(assistCategory);
         }
 
+        if (!Utils.isVoiceCapable(getActivity())) {
+            prefScreen.removePreference(mPowerEndCall);
+            mPowerEndCall = null;
+        }
+
         // let super know we can load ActionPreferences
         onPreferenceScreenLoaded(ActionConstants.getDefaults(ActionConstants.HWKEYS));
 
         // load preferences first
         setActionPreferencesEnabled(keysDisabled == 0);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mPowerEndCall != null) {
+            final int incallPowerBehavior = Settings.Secure.getInt(getContentResolver(),
+                    Settings.Secure.INCALL_POWER_BUTTON_BEHAVIOR,
+                    Settings.Secure.INCALL_POWER_BUTTON_BEHAVIOR_DEFAULT);
+            final boolean powerButtonEndsCall =
+                    (incallPowerBehavior == Settings.Secure.INCALL_POWER_BUTTON_BEHAVIOR_HANGUP);
+            mPowerEndCall.setChecked(powerButtonEndsCall);
+         }
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        if (preference == mPowerEndCall) {
+            handleTogglePowerButtonEndsCallPreferenceClick();
+            return true;
+        }
+        return super.onPreferenceTreeClick(preference);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -246,6 +278,13 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
     @Override
     protected boolean usesExtendedActionsList() {
         return true;
+    }
+
+    private void handleTogglePowerButtonEndsCallPreferenceClick() {
+        Settings.Secure.putInt(getContentResolver(),
+                Settings.Secure.INCALL_POWER_BUTTON_BEHAVIOR, (mPowerEndCall.isChecked()
+                        ? Settings.Secure.INCALL_POWER_BUTTON_BEHAVIOR_HANGUP
+                        : Settings.Secure.INCALL_POWER_BUTTON_BEHAVIOR_SCREEN_OFF));
     }
 
     @Override

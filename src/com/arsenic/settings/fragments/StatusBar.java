@@ -43,6 +43,7 @@ import android.view.View;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.arsenic.support.preferences.CustomSeekBarPreference;
+import com.arsenic.support.preferences.SystemSettingMasterSwitchPreference;
 import com.arsenic.support.preferences.SystemSettingSwitchPreference;
 import com.android.settings.Utils;
 import android.util.Log;
@@ -61,6 +62,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String SMS_BREATH = "sms_breath";
     private static final String MISSED_CALL_BREATH = "missed_call_breath";
     private static final String VOICEMAIL_BREATH = "voicemail_breath";
+    private static final String STATUS_BAR_CLOCK = "status_bar_clock";
 
     private SwitchPreference mSmsBreath;
     private SwitchPreference mMissedCallBreath;
@@ -69,8 +71,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 3;
     private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
 
-    private SystemSettingSeekBarPreference mThreshold;
-    private SystemSettingSwitchPreference mNetMonitor;
+    private SystemSettingMasterSwitchPreference mStatusBarClockShow;
     private ListPreference mStatusBarBatteryShowPercent;
     private ListPreference mStatusBarBattery;
 
@@ -109,19 +110,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
                prefSet.removePreference(mVoicemailBreath);
            }
 
-        boolean isNetMonitorEnabled = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_STATE, 1, UserHandle.USER_CURRENT) == 1;
-        mNetMonitor = (SystemSettingSwitchPreference) findPreference("network_traffic_state");
-        mNetMonitor.setChecked(isNetMonitorEnabled);
-        mNetMonitor.setOnPreferenceChangeListener(this);
-
-        int value = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 1, UserHandle.USER_CURRENT);
-        mThreshold = (SystemSettingSeekBarPreference) findPreference("network_traffic_autohide_threshold");
-        mThreshold.setValue(value);
-        mThreshold.setOnPreferenceChangeListener(this);
-        mThreshold.setEnabled(isNetMonitorEnabled);
-
         mStatusBarBatteryShowPercent =
                 (ListPreference) findPreference(SHOW_BATTERY_PERCENT);
 
@@ -138,26 +126,17 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
         enableStatusBarBatteryDependents(batteryStyle);
         mStatusBarBattery.setOnPreferenceChangeListener(this);
+
+        mStatusBarClockShow = (SystemSettingMasterSwitchPreference) findPreference(STATUS_BAR_CLOCK);
+        mStatusBarClockShow.setChecked((Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_CLOCK, 1) == 1));
+        mStatusBarClockShow.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mNetMonitor) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putIntForUser(getActivity().getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_STATE, value ? 1 : 0,
-                    UserHandle.USER_CURRENT);
-            mNetMonitor.setChecked(value);
-            mThreshold.setEnabled(value);
-            return true;
-        } else if (preference == mThreshold) {
-            int val = (Integer) newValue;
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, val,
-                    UserHandle.USER_CURRENT);
-            return true;
-        } else if (preference == mStatusBarBatteryShowPercent) {
+        if (preference == mStatusBarBatteryShowPercent) {
             int batteryShowPercent = Integer.valueOf((String) newValue);
             int index = mStatusBarBatteryShowPercent.findIndexOfValue((String) newValue);
             Settings.System.putInt(
@@ -184,6 +163,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
         } else if (preference == mVoicemailBreath) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(), VOICEMAIL_BREATH, value ? 1 : 0);
+            return true;
+	} else if (preference == mStatusBarClockShow) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_CLOCK, value ? 1 : 0);
             return true;
 		}
         return false;

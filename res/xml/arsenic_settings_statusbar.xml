@@ -40,34 +40,14 @@
         android:key="statusbar_clock"
         android:title="@string/statusbar_clock">
 
-        <Preference
-            android:key="status_bar_clock_settings"
-            android:fragment="com.arsenic.settings.fragments.StatusbarClockSettings" 
+        <com.arsenic.support.preferences.SystemSettingMasterSwitchPreference
+            android:key="status_bar_clock"
+            android:fragment="com.arsenic.settings.fragments.StatusbarClockSettings"
             android:title="@string/status_bar_clock_title"
-            android:summary="@string/status_bar_clock_summary" />
+            android:summary="@string/status_bar_clock_summary"
+            android:defaultValue="true" />
 
     </PreferenceCategory>
-
-     <PreferenceCategory
-        android:title="@string/breathing_notifications_category" />
-
-        <com.arsenic.support.preferences.SystemSettingSwitchPreference
-            android:key="sms_breath"
-            android:title="@string/sms_breath_title"
-            android:summary="@string/sms_breath_summary"
-            android:persistent="false"/>
-
-        <com.arsenic.support.preferences.SystemSettingSwitchPreference
-            android:key="missed_call_breath"
-            android:title="@string/missed_call_breath_title"
-            android:summary="@string/missed_call_breath_summary"
-            android:persistent="false"/>
-
-        <com.arsenic.support.preferences.SystemSettingSwitchPreference
-            android:key="voicemail_breath"
-            android:title="@string/voicemail_breath_title"
-            android:summary="@string/voicemail_breath_summary"
-            android:persistent="false"/>
 
     <PreferenceCategory
         android:key="statusbar_battery"
@@ -95,12 +75,6 @@
 
     </PreferenceCategory>
 
-    <!--<PreferenceCategory
-        android:key="statusbar_networkicon"
-        android:title="@string/statusbar_networkicon">
-
-    </PreferenceCategory>-->
-
     <PreferenceCategory
         android:key="statusbar_ntraffic"
         android:title="@string/statusbar_ntraffic">
@@ -111,34 +85,17 @@
             android:summary="@string/statusbar_show_wifi_activity_summary"
             android:defaultValue="false" />
 
-    </PreferenceCategory>
-
-    <!--<PreferenceCategory
-        android:key="statusbar_pulldown"
-        android:title="@string/statusbar_pulldown">
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/statusbar_logo_cat">
-
-    </PreferenceCategory>-->
-
-    <PreferenceCategory
-        android:key="statusbar_carrier"
-        android:title="@string/statusbar_carrier">
-
         <Preference
             android:key="carrierlabel_settings"
-            android:title="@string/carrier_label_category_title"
-            android:summary="@string/carrier_label_category_summary"
+            android:title="@string/carrier_label_settings_title"
+            android:summary="@string/carrier_label_settings_summary"
             android:fragment="com.arsenic.settings.fragments.CarrierLabelSettings" />
 
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="statusbar_tuner"
-        android:title="@string/statusbar_tuner">
+        android:title="@string/statusbar_items_category">
 
         <Preference
             android:title="@string/statusbar_items_title"
@@ -184,5 +141,27 @@
             android:summary="@string/data_disabled_icon_summary"
             android:defaultValue="true"/>
 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/breathing_notifications_category" >
+
+        <com.arsenic.support.preferences.SystemSettingSwitchPreference
+            android:key="sms_breath"
+            android:title="@string/sms_breath_title"
+            android:summary="@string/sms_breath_summary"
+            android:persistent="false"/>
+
+        <com.arsenic.support.preferences.SystemSettingSwitchPreference
+            android:key="missed_call_breath"
+            android:title="@string/missed_call_breath_title"
+            android:summary="@string/missed_call_breath_summary"
+            android:persistent="false"/>
+
+        <com.arsenic.support.preferences.SystemSettingSwitchPreference
+            android:key="voicemail_breath"
+            android:title="@string/voicemail_breath_title"
+            android:summary="@string/voicemail_breath_summary"
+            android:persistent="false"/>
     </PreferenceCategory>
 </PreferenceScreen>

@@ -21,16 +21,12 @@
     <!--<PreferenceCategory
         android:key="notification_lights"
         android:title="@string/notification_lights">
-		
-        <Preference
-            android:key="charging_light"
-            android:fragment="com.arsenic.settings.BatteryLightSettings"
-            android:title="@string/battery_light_settings" />-->
 
         <Preference
             android:key="notification_light"
             android:fragment="com.android.settings.applications.manageapplications.ManageApplications"
-            android:title="@string/notification_light_settings" >
+            android:title="@string/notification_light_settings"
+            android:summary="@string/notification_light_settings_summary" >
             <extra
                 android:name="classname"
                 android:value="com.android.settings.Settings$NotificationAppListActivity" />
@@ -41,6 +37,19 @@
             android:title="@string/flashlight_on_call_title"
             android:entries="@array/flashlight_on_call_entries"
             android:entryValues="@array/flashlight_on_call_values" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="notification_stat"
+        android:title="@string/notification_stat">
+
+        <com.arsenic.support.preferences.SystemSettingMasterSwitchPreference
+            android:key="status_bar_show_ticker"
+            android:fragment="com.arsenic.settings.fragments.TickerSettings"
+            android:title="@string/status_bar_show_ticker_title"
+            android:summary="@string/status_bar_show_ticker_summary"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 
@@ -59,41 +68,6 @@
             android:title="@string/disable_immersive_message_title"
             android:summary="@string/disable_immersive_message_summary"
             android:defaultValue="false" />
-    
-    </PreferenceCategory>
-
-    <!--PreferenceCategory
-        android:key="notification_heads"
-        android:title="@string/notification_heads">-->
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="statusbar_ticker"
-        android:title="@string/statusbar_ticker">
-
-        <com.arsenic.support.preferences.SystemSettingSwitchPreference
-            android:key="status_bar_show_ticker"
-            android:title="@string/status_bar_show_ticker_title"
-            android:summary="@string/status_bar_show_ticker_summary"
-            android:defaultValue="false" />
-
-        <com.arsenic.support.preferences.SystemSettingListPreference
-            android:key="status_bar_ticker_animation_mode"
-            android:title="@string/ticker_animation_mode_title"
-            android:entries="@array/ticker_animation_mode_entries"
-            android:entryValues="@array/ticker_animation_mode_values"
-            android:defaultValue="0"
-            android:dependency="status_bar_show_ticker" />
-
-        <com.arsenic.support.preferences.CustomSeekBarPreference
-            android:key="status_bar_ticker_tick_duration"
-            android:title="@string/ticker_tick_duration_title"
-            android:min="500"
-            android:max="10000"
-            android:defaultValue="3000"
-            settings:interval="100"
-            android:dependency="status_bar_show_ticker" />
 
     </PreferenceCategory>
 
@@ -150,5 +124,4 @@
             android:title="@string/incall_notifications_vibrate" 
             android:defaultValue="false" /> 
     </PreferenceCategory>
-
 </PreferenceScreen>

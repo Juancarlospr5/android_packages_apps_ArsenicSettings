@@ -29,13 +29,6 @@
         android:title="@string/show_cpu_info"
         android:summary="@string/show_cpu_info_summary" />
 
-    <Preference
-        android:key="chooser_activity_blacklist"
-        android:fragment="com.arsenic.settings.fragments.ChooserActivityBlacklist"
-        android:title="@string/chooser_activity_blacklist_title"
-        android:summary="@string/chooser_activity_blacklist_summary"
-        android:persistent="false" />
-
     <PreferenceCategory
         android:key="navigation_burnin"
         android:title="@string/navigation_burnin_category" >
@@ -52,6 +45,7 @@
             android:max="90"
             android:min="45"
             android:defaultValue="60"
+            settings:units=" sec"
             android:persistent="false" />
     </PreferenceCategory>
 </PreferenceScreen>
