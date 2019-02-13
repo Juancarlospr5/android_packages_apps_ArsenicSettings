@@ -30,7 +30,6 @@ import com.android.settings.display.FontPickerPreferenceController;
 import com.arsenic.settings.display.AccentPickerPreferenceController;
 import com.arsenic.settings.display.AutoDarkUIPreferenceController;
 import com.arsenic.settings.display.DarkUIPreferenceController;
-import com.arsenic.settings.display.NotificationStylePreferenceController;
 import com.arsenic.settings.display.QsAlphaPreferenceController;
 import com.arsenic.settings.display.QsColorPreferenceController;
 import com.arsenic.settings.display.QsHeaderStylePreferenceController;
@@ -104,7 +103,6 @@ public class Interface extends DashboardFragment {
 	    controllers.add(new AutoDarkUIPreferenceController(context));
         controllers.add(new DarkUIPreferenceController(context));
 		controllers.add(mFontPickerPreference = new FontPickerPreferenceController(context, lifecycle, fragment));
-        controllers.add(new NotificationStylePreferenceController(context));
         controllers.add(new QsAlphaPreferenceController(context));
         controllers.add(new QsColorPreferenceController(context));
         controllers.add(new QsHeaderStylePreferenceController(context));
