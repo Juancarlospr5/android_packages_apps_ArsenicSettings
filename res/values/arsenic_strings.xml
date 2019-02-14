@@ -388,10 +388,6 @@
     <string name="ime_switcher_notify">Selector notification</string>
     <string name="ime_switcher_notify_summary">Display input method selector notification</string>
 
-    <!-- Toast icon -->
-    <string name="toast_icon_title">Toast icon</string>
-    <string name="toast_icon_summary">Display icon of activity that generates toast message</string>
-
     <!-- Power menu on lockscreen -->
     <string name="lockscreen_power_menu_disabled_title">Disable power menu on lock screen</string>
     <string name="lockscreen_power_menu_disabled_summary">This will only disable the power menu on secure lock screens</string>
