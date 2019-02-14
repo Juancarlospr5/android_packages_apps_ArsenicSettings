@@ -394,32 +394,13 @@
     <string name="smart_pixels_percent">Percent of pixels to disable</string>
     <string name="smart_pixels_shift">Prevent burn-in by shifting pixels every</string>
 
-    <!-- Battery fully charged -->
-    <string name="battery_fully_charged_notif_title">Battery fully charged</string>
-    <string name="battery_fully_charged_notif_summary">Show a notification when the battery is fully charged</string>
-
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">In-call Vibration</string>
     <string name="incall_vibrate_connect_title">Vibrate on Connect</string>
     <string name="incall_vibrate_call_wait_title">Vibrate on Call Waiting</string>
     <string name="incall_vibrate_disconnect_title">Vibrate on Disconnect</string>
-<<<<<<< HEAD:res/values/arsenic_strings.xml
-
-=======
     <string name="incall_notifications_vibrate">Vibrate for Notifications</string>
-		
-    <!-- Battery light -->
-    <string name="battery_light_settings">Battery charging light</string>
-    <string name="battery_light_enable">Enable</string>
-    <string name="battery_light_allow_on_dnd_title">Battery light in Do Not Disturb mode</string>
-    <string name="battery_light_low_blinking_title">Blinking light on low battery</string>
-    <string name="battery_light_cat">Battery light color when charging</string>
-    <string name="battery_light_low_color">Low battery</string>
-    <string name="battery_light_medium_color">Medium battery</string>
-    <string name="battery_light_full_color">Almost full battery</string>
-    <string name="battery_light_reallyfull_color">Full (100) battery</string>
-	
->>>>>>> c8e0cea...  Allow vibration instead of beep for in-call notifications [2/2]:res/values/havoc_strings.xml
+
     <!-- Ambient display battery percentage --> 
     <string name="ambient_battery_percent_title">Battery level on bottom</string> 
     <string name="ambient_battery_percent_summary">Enable to show battery percent while dozing</string> 	
@@ -636,4 +617,6 @@
     <string name="screenshot_type_title">Screenshot type</string>
     <string name="screenshot_type_fullscreen">Fullscreen screenshots</string>
     <string name="screenshot_type_partial">Partial screenshots</string>
+=======
+>>>>>>> parent of b92314c... Show battery fully charged notification [2/2]
 </resources>
