@@ -12,7 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
-import com.havoc.settings.preferences.AppChooserAdapter.AppItem;
+import com.arsenic.settings.preferences.AppChooserAdapter.AppItem;
 import com.android.settings.R;
 
 import java.util.ArrayList;

@@ -37,11 +37,11 @@
         android:title="@string/usb_default_config_title"
         android:summary="@string/usb_default_config_summary"/>
 
-    <com.arsenic.support.preferences.GlobalSettingSwitchPreference
+    <!--<com.arsenic.support.preferences.GlobalSettingSwitchPreference
         android:key="wake_when_plugged_or_unplugged"
         android:title="@string/wakeup_when_plugged_unplugged_title"
         android:summary="@string/wakeup_when_plugged_unplugged_summary"
-        android:defaultValue="true" />
+        android:defaultValue="true" /> -->
 
     <com.arsenic.support.preferences.SystemSettingSwitchPreference
         android:key="headset_connect_player"

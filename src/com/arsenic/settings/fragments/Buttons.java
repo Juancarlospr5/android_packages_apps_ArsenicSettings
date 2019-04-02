@@ -33,12 +33,14 @@ import com.android.settings.R;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.hwkeys.ActionConstants;
-import com.android.internal.util.hwkeys.ActionUtils;
+import com.android.internal.util.hwkeys.ActionUtil;
 
 import com.arsenic.settings.Utils;
 import com.arsenic.settings.preferences.ActionFragment;
 import com.arsenic.support.preferences.CustomSeekBarPreference;
 import com.arsenic.support.preferences.SystemSettingSwitchPreference;
+
+import lineageos.providers.LineageSettings;
 
 public class Buttons extends ActionFragment implements OnPreferenceChangeListener {
 
@@ -47,8 +49,6 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
     private static final String KEY_BUTTON_BRIGHTNESS_SW = "button_brightness_sw";
     private static final String KEY_BACKLIGHT_TIMEOUT = "backlight_timeout";
     private static final String HWKEY_DISABLE = "hardware_keys_disable";
-    private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT =
-            "torch_long_press_power_timeout";
     private static final String KEY_POWER_END_CALL = "power_end_call";
 
     // category keys
@@ -75,7 +75,6 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
     private CustomSeekBarPreference mButtonBrightness;
     private SwitchPreference mButtonBrightness_sw;
     private SwitchPreference mHwKeyDisable;
-    private ListPreference mTorchLongPressPowerTimeout;
     private SwitchPreference mPowerEndCall;
 
     @Override
@@ -83,22 +82,13 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.arsenic_settings_buttons);
 
-        mTorchLongPressPowerTimeout =
-                    (ListPreference) findPreference(KEY_TORCH_LONG_PRESS_POWER_TIMEOUT);
-
-        mTorchLongPressPowerTimeout.setOnPreferenceChangeListener(this);
-        int TorchTimeout = Settings.System.getInt(getContentResolver(),
-                        Settings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, 0);
-        mTorchLongPressPowerTimeout.setValue(Integer.toString(TorchTimeout));
-        mTorchLongPressPowerTimeout.setSummary(mTorchLongPressPowerTimeout.getEntry());
-
         mPowerEndCall = (SwitchPreference) findPreference(KEY_POWER_END_CALL);
 
         final Resources res = getResources();
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
-        final boolean needsNavbar = ActionUtils.hasNavbarByDefault(getActivity());
+        final boolean needsNavbar = ActionUtil.hasNavbarByDefault(getActivity());
         final PreferenceCategory hwkeyCat = (PreferenceCategory) prefScreen
                 .findPreference(CATEGORY_HWKEY);
         int keysDisabled = 0;
@@ -125,7 +115,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
                 if (mBacklightTimeout != null) {
                     mBacklightTimeout.setOnPreferenceChangeListener(this);
                     int BacklightTimeout = Settings.System.getInt(getContentResolver(),
-                            Settings.System.BUTTON_BACKLIGHT_TIMEOUT, 500);
+                            LineageSettings.Secure.BUTTON_BACKLIGHT_TIMEOUT, 500);
                     mBacklightTimeout.setValue(Integer.toString(BacklightTimeout));
                     mBacklightTimeout.setSummary(mBacklightTimeout.getEntry());
                 }
@@ -134,7 +124,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
                     hwkeyCat.removePreference(mButtonBrightness_sw);
                     if (mButtonBrightness != null) {
                         int ButtonBrightness = Settings.System.getInt(getContentResolver(),
-                                Settings.System.BUTTON_BRIGHTNESS, 255);
+                                LineageSettings.Secure.BUTTON_BRIGHTNESS, 255);
                         mButtonBrightness.setValue(ButtonBrightness / 1);
                         mButtonBrightness.setOnPreferenceChangeListener(this);
                     }
@@ -142,7 +132,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
                     hwkeyCat.removePreference(mButtonBrightness);
                     if (mButtonBrightness_sw != null) {
                         mButtonBrightness_sw.setChecked((Settings.System.getInt(getContentResolver(),
-                                Settings.System.BUTTON_BRIGHTNESS, 1) == 1));
+                                LineageSettings.Secure.BUTTON_BRIGHTNESS, 1) == 1));
                         mButtonBrightness_sw.setOnPreferenceChangeListener(this);
                     }
                 }
@@ -238,8 +228,8 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
         if (preference == mBacklightTimeout) {
             String BacklightTimeout = (String) newValue;
             int BacklightTimeoutValue = Integer.parseInt(BacklightTimeout);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.BUTTON_BACKLIGHT_TIMEOUT, BacklightTimeoutValue);
+            LineageSettings.Secure.putInt(getActivity().getContentResolver(),
+                    LineageSettings.Secure.BUTTON_BACKLIGHT_TIMEOUT, BacklightTimeoutValue);
             int BacklightTimeoutIndex = mBacklightTimeout
                     .findIndexOfValue(BacklightTimeout);
             mBacklightTimeout
@@ -247,29 +237,19 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
             return true;
         } else if (preference == mButtonBrightness) {
             int value = (Integer) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.BUTTON_BRIGHTNESS, value * 1);
+            LineageSettings.Secure.putInt(getActivity().getContentResolver(),
+                    LineageSettings.Secure.BUTTON_BRIGHTNESS, value * 1);
             return true;
         } else if (preference == mButtonBrightness_sw) {
             boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.BUTTON_BRIGHTNESS, value ? 1 : 0);
+            LineageSettings.Secure.putInt(getActivity().getContentResolver(),
+                    LineageSettings.Secure.BUTTON_BRIGHTNESS, value ? 1 : 0);
             return true;
         } else if (preference == mHwKeyDisable) {
             boolean value = (Boolean) newValue;
             Settings.Secure.putInt(getContentResolver(), Settings.Secure.HARDWARE_KEYS_DISABLE,
                     value ? 1 : 0);
             setActionPreferencesEnabled(!value);
-            return true;
-        } else if (preference == mTorchLongPressPowerTimeout) {
-            String TorchTimeout = (String) newValue;
-            int TorchTimeoutValue = Integer.parseInt(TorchTimeout);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, TorchTimeoutValue);
-            int TorchTimeoutIndex = mTorchLongPressPowerTimeout
-                    .findIndexOfValue(TorchTimeout);
-            mTorchLongPressPowerTimeout
-                    .setSummary(mTorchLongPressPowerTimeout.getEntries()[TorchTimeoutIndex]);
             return true;
         }
         return false;

@@ -129,11 +129,11 @@ public class AlarmBlocker extends SettingsPreferenceFragment {
         mBackgroundActivatedColor = ContextCompat.getColor(getActivity(), R.color.switchBarBackgroundActivatedColor);
         mBackgroundColor = ContextCompat.getColor(getActivity(), R.color.switch_bar_background);
 
-        mTextView = (TextView) view.findViewById(R.id.havoc_switch_text);
+        mTextView = (TextView) view.findViewById(R.id.arsenic_switch_text);
         mTextView.setText(getString(isEnabled() ?
                 R.string.switch_bar_on : R.string.switch_bar_off));
 
-        switchBar = view.findViewById(R.id.havoc_switch_bar);
+        switchBar = view.findViewById(R.id.arsenic_switch_bar);
         switchBar.setBackgroundColor(isEnabled() ? mBackgroundActivatedColor : mBackgroundColor);
 
         mBlockerEnabled  = (Switch) switchBar.findViewById(android.R.id.switch_widget);

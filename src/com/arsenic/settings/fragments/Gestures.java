@@ -36,7 +36,7 @@ import android.view.View;
 import android.view.WindowManagerGlobal;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.internal.util.hwkeys.ActionUtils; 
+import com.android.internal.util.hwkeys.ActionUtil; 
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -107,7 +107,7 @@ public class Gestures extends SettingsPreferenceFragment implements
                         Settings.Secure.NAVIGATION_BAR_VISIBLE, 
                         0); 
             } else { 
-                if (ActionUtils.hasNavbarByDefault(getPrefContext())) { 
+                if (ActionUtil.hasNavbarByDefault(getPrefContext())) { 
                     Settings.Secure.putInt(resolver, 
                             Settings.Secure.NAVIGATION_BAR_VISIBLE, 
                             1); 

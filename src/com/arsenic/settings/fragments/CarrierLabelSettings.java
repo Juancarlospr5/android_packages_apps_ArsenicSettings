@@ -106,8 +106,8 @@ public class CarrierLabelSettings extends SettingsPreferenceFragment implements
                 getResources().getString(R.string.show_carrier_keyguard) };
         CharSequence[] NonNotchValues = {"0", "1" , "2", "3"};
         CharSequence[] NotchValues = {"0", "1"};
-        mShowCarrierLabel.setEntries(HavocUtils.hasNotch(getActivity()) ? NotchEntries : NonNotchEntries);
-        mShowCarrierLabel.setEntryValues(HavocUtils.hasNotch(getActivity()) ? NotchValues : NonNotchValues);
+        mShowCarrierLabel.setEntries(ArsenicUtils.hasNotch(getActivity()) ? NotchEntries : NonNotchEntries);
+        mShowCarrierLabel.setEntryValues(ArsenicUtils.hasNotch(getActivity()) ? NotchValues : NonNotchValues);
         mShowCarrierLabel.setValue(String.valueOf(showCarrierLabel));
         mShowCarrierLabel.setSummary(mShowCarrierLabel.getEntry());
         mShowCarrierLabel.setOnPreferenceChangeListener(this);
